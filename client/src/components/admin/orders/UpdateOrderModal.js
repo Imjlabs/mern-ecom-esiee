@@ -40,16 +40,13 @@ const UpdateOrderModal = (props) => {
 
   return (
     <Fragment>
-      {/* Black Overlay */}
       <div
         onClick={(e) => dispatch({ type: "updateOrderModalClose" })}
         className={`${
           data.updateOrderModal.modal ? "" : "hidden"
         } fixed top-0 left-0 z-30 w-full h-full bg-black opacity-50`}
       />
-      {/* End Black Overlay */}
 
-      {/* Modal Start */}
       <div
         className={`${
           data.updateOrderModal.modal ? "" : "hidden"
@@ -58,9 +55,8 @@ const UpdateOrderModal = (props) => {
         <div className="relative bg-white w-11/12 md:w-3/6 shadow-lg flex flex-col items-center space-y-4  overflow-y-auto px-4 py-4 md:px-8">
           <div className="flex items-center justify-between w-full pt-4">
             <span className="text-left font-semibold text-2xl tracking-wider">
-              Update Order
+              Mettre à jour la commande
             </span>
-            {/* Close Modal */}
             <span
               style={{ background: "#303031" }}
               onClick={(e) => dispatch({ type: "updateOrderModalClose" })}
@@ -83,7 +79,7 @@ const UpdateOrderModal = (props) => {
             </span>
           </div>
           <div className="flex flex-col space-y-1 w-full">
-            <label htmlFor="status">Order Status</label>
+            <label htmlFor="status">Status de la commande</label>
             <select
               value={status}
               name="status"
@@ -92,19 +88,19 @@ const UpdateOrderModal = (props) => {
               id="status"
             >
               <option name="status" value="Not processed">
-                Not processed
+                Non traité
               </option>
               <option name="status" value="Processing">
-                Processing
+                En cours de traitement
               </option>
               <option name="status" value="Shipped">
-                Shipped
+                Expédié
               </option>
               <option name="status" value="Delivered">
-                Delivered
+                Livrée
               </option>
               <option name="status" value="Cancelled">
-                Cancelled
+                Annuler
               </option>
             </select>
           </div>
@@ -114,7 +110,7 @@ const UpdateOrderModal = (props) => {
               onClick={(e) => submitForm()}
               className="rounded-full bg-gray-800 text-gray-100 text-lg font-medium py-2"
             >
-              Update category
+              Mettre à jour la catégorie
             </button>
           </div>
         </div>

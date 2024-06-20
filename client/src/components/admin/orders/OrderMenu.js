@@ -11,7 +11,6 @@ const OrderMenu = (props) => {
     <Fragment>
       <div className="col-span-1 flex items-center">
         <div className="flex flex-col space-y-4 md:flex-row md:justify-between md:items-center md:space-y-0 w-full">
-          {/* It's open the add order modal */}
           <div
             style={{ background: "#303031" }}
             className="relative rounded-full text-gray-100 text-sm font-semibold uppercase"
@@ -28,7 +27,7 @@ const OrderMenu = (props) => {
               >
                 <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z" />
               </svg>
-              <span className="pr-2">Filter</span>
+              <span className="pr-2">Filtre</span>
             </div>
             <div
               style={{ background: "#303031" }}
@@ -42,7 +41,7 @@ const OrderMenu = (props) => {
                 }
                 className="px-4 py-2 hover:bg-black text-center cursor-pointer"
               >
-                All
+                Tous les statuts
               </span>
               <span
                 onClick={(e) =>
@@ -56,7 +55,7 @@ const OrderMenu = (props) => {
                 }
                 className="px-4 py-2 hover:bg-black text-center cursor-pointer"
               >
-                Not processed
+                Non traité
               </span>
               <span
                 onClick={(e) =>
@@ -70,7 +69,7 @@ const OrderMenu = (props) => {
                 }
                 className="px-4 py-2 hover:bg-black text-center cursor-pointer"
               >
-                Processing
+                En cours de traitement
               </span>
               <span
                 onClick={(e) =>
@@ -78,7 +77,7 @@ const OrderMenu = (props) => {
                 }
                 className="px-4 py-2 hover:bg-black text-center cursor-pointer"
               >
-                Shipped
+                Expédié
               </span>
               <span
                 onClick={(e) =>
@@ -92,7 +91,7 @@ const OrderMenu = (props) => {
                 }
                 className="px-4 py-2 hover:bg-black text-center cursor-pointer"
               >
-                Delivered
+                Livré
               </span>
               <span
                 onClick={(e) =>
@@ -106,7 +105,7 @@ const OrderMenu = (props) => {
                 }
                 className="px-4 py-2 hover:bg-black text-center cursor-pointer"
               >
-                Cancelled
+                Anuller
               </span>
             </div>
           </div>
@@ -114,7 +113,6 @@ const OrderMenu = (props) => {
             <SearchFilter />
           </div>
         </div>
-        {/*<AddCategoryModal/>*/}
         <UpdateOrderModal />
       </div>
     </Fragment>
