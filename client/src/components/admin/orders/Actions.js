@@ -30,7 +30,6 @@ export const deleteOrderReq = async (oId, dispatch) => {
   }
 };
 
-/* Filter All Order */
 export const filterOrder = async (
   type,
   data,

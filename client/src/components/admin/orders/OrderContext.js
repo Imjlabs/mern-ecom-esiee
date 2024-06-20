@@ -11,19 +11,16 @@ export const orderState = {
 
 export const orderReducer = (state, action) => {
   switch (action.type) {
-    /* Get all category */
     case "fetchOrderAndChangeState":
       return {
         ...state,
         orders: action.payload,
       };
-    /* Create a category */
     case "addCategoryModal":
       return {
         ...state,
         addCategoryModal: action.payload,
       };
-    /* Edit a category */
     case "updateOrderModalOpen":
       return {
         ...state,

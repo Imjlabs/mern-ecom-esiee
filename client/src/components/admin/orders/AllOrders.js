@@ -41,16 +41,16 @@ const AllCategory = (props) => {
         <table className="table-auto border w-full my-2">
           <thead>
             <tr>
-              <th className="px-4 py-2 border">Products</th>
-              <th className="px-4 py-2 border">Status</th>
+              <th className="px-4 py-2 border">Produits</th>
+              <th className="px-4 py-2 border">Statut</th>
               <th className="px-4 py-2 border">Total</th>
-              <th className="px-4 py-2 border">Transaction Id</th>
-              <th className="px-4 py-2 border">Customer</th>
+              <th className="px-4 py-2 border">Id de transaction</th>
+              <th className="px-4 py-2 border">Client</th>
               <th className="px-4 py-2 border">Email</th>
-              <th className="px-4 py-2 border">Phone</th>
-              <th className="px-4 py-2 border">Address</th>
-              <th className="px-4 py-2 border">Created at</th>
-              <th className="px-4 py-2 border">Updated at</th>
+              <th className="px-4 py-2 border">téléphone</th>
+              <th className="px-4 py-2 border">adresse</th>
+              <th className="px-4 py-2 border">Crée le</th>
+              <th className="px-4 py-2 border">Mise à jour le</th>
               <th className="px-4 py-2 border">Actions</th>
             </tr>
           </thead>
@@ -73,21 +73,20 @@ const AllCategory = (props) => {
                   colSpan="12"
                   className="text-xl text-center font-semibold py-8"
                 >
-                  No order found
+                  Aucune commande trouvée
                 </td>
               </tr>
             )}
           </tbody>
         </table>
         <div className="text-sm text-gray-600 mt-2">
-          Total {orders && orders.length} order found
+          Total {orders && orders.length} commandes trouvées
         </div>
       </div>
     </Fragment>
   );
 };
 
-/* Single Category Component */
 const CategoryTable = ({ order, editOrder }) => {
   const { dispatch } = useContext(OrderContext);
 
