@@ -12,7 +12,6 @@ const DashboardCard = (props) => {
 
   return (
     <Fragment>
-      {/* Card Start */}
       <div className="m-4 grid grid-cols-1 md:grid-cols-4 row-gap-4 col-gap-4">
         <div className="flex flex-col justify-center items-center col-span-1 bg-white p-6 shadow-lg hover:shadow-none cursor-pointer transition-all duration-300 ease-in border-b-4 border-opacity-0 hover:border-opacity-100 border-indigo-200">
           <div className="bg-indigo-200 p-2 cursor-pointer rounded-full">
@@ -139,7 +138,6 @@ const DashboardCard = (props) => {
           <div className="text-lg font-medium">Catégories</div>
         </div>
       </div>
-      {/* End Card */}
     </Fragment>
   );
 };
