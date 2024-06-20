@@ -38,7 +38,6 @@ const AllCategory = (props) => {
     }
   };
 
-  /* This method call the editmodal & dispatch category context */
   const editCategory = (cId, type, des, status) => {
     if (type) {
       dispatch({
@@ -120,7 +119,6 @@ const AllCategory = (props) => {
   );
 };
 
-/* Single Category Component */
 const CategoryTable = ({ category, deleteCat, editCat }) => {
   return (
     <Fragment>

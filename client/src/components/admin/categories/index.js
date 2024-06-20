@@ -4,7 +4,6 @@ import CategoryMenu from "./CategoryMenu";
 import AllCategories from "./AllCategories";
 import { categoryState, categoryReducer } from "./CategoryContext";
 
-/* This context manage all of the caregories component's data */
 export const CategoryContext = createContext();
 
 const CategoryComponent = () => {

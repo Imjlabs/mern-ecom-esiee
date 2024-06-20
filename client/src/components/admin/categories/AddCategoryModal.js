@@ -42,7 +42,7 @@ const AddCategoryModal = (props) => {
 
     if (!fData.cImage) {
       dispatch({ type: "loading", payload: false });
-      return setFdata({ ...fData, error: "Please upload a category image" });
+      return setFdata({ ...fData, error: "Ajouter une image pour la catégorie" });
     }
 
     try {
@@ -84,16 +84,13 @@ const AddCategoryModal = (props) => {
 
   return (
     <Fragment>
-      {/* Black Overlay */}
       <div
         onClick={(e) => dispatch({ type: "addCategoryModal", payload: false })}
         className={`${
           data.addCategoryModal ? "" : "hidden"
         } fixed top-0 left-0 z-30 w-full h-full bg-black opacity-50`}
       />
-      {/* End Black Overlay */}
 
-      {/* Modal Start */}
       <div
         className={`${
           data.addCategoryModal ? "" : "hidden"
@@ -104,7 +101,6 @@ const AddCategoryModal = (props) => {
             <span className="text-left font-semibold text-2xl tracking-wider">
               Ajouter une catégorie
             </span>
-            {/* Close Modal */}
             <span
               style={{ background: "#303031" }}
               onClick={(e) =>
@@ -166,7 +162,6 @@ const AddCategoryModal = (props) => {
                 rows={5}
               />
             </div>
-            {/* Image Field & function */}
             <div className="flex flex-col space-y-1 w-full">
               <label htmlFor="name">Image</label>
               <input
