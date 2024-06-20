@@ -92,7 +92,7 @@ const ProductDetailsSection = (props) => {
       </div>
     );
   } else if (!sProduct) {
-    return <div>No product</div>;
+    return <div>Pas de produit</div>;
   }
   return (
     <Fragment>
@@ -177,7 +177,7 @@ const ProductDetailsSection = (props) => {
               <div className="text-2xl tracking-wider">{sProduct.pName}</div>
               <div className="flex justify-between items-center">
                 <span className="text-xl tracking-wider text-yellow-700">
-                  ${sProduct.pPrice}.00
+                  {sProduct.pPrice}.00 €
                 </span>
                 <span>
                   <svg
@@ -220,7 +220,7 @@ const ProductDetailsSection = (props) => {
             </div>
             <div className="my-4 md:my-6">
               {+quantitiy === +sProduct.pQuantity ? (
-                <span className="text-xs text-red-500">Stock limited</span>
+                <span className="text-xs text-red-500">Limite de stock</span>
               ) : (
                 ""
               )}
@@ -234,9 +234,8 @@ const ProductDetailsSection = (props) => {
                     quantitiy === sProduct.pQuantity && "text-red-500"
                   }`}
                 >
-                  Quantity
+                  Quantité
                 </div>
-                {/* Quantity Button */}
                 {sProduct.pQuantity !== 0 ? (
                   <Fragment>
                     {layoutData.inCart == null ||
@@ -371,7 +370,7 @@ const ProductDetailsSection = (props) => {
                       style={{ background: "#303031" }}
                       className={`px-4 py-2 text-white text-center cursor-not-allowed uppercase opacity-75`}
                     >
-                      In cart
+                      Dans le panier
                     </div>
                   ) : (
                     <div
@@ -390,7 +389,7 @@ const ProductDetailsSection = (props) => {
                       style={{ background: "#303031" }}
                       className={`px-4 py-2 text-white text-center cursor-pointer uppercase`}
                     >
-                      Add to cart
+                      Ajouter au panier
                     </div>
                   )}
                 </Fragment>
@@ -402,7 +401,7 @@ const ProductDetailsSection = (props) => {
                       style={{ background: "#303031" }}
                       className={`px-4 py-2 text-white text-center cursor-not-allowed uppercase opacity-75`}
                     >
-                      In cart
+                      Dans le panier
                     </div>
                   ) : (
                     <div
@@ -410,17 +409,15 @@ const ProductDetailsSection = (props) => {
                       disabled={true}
                       className="px-4 py-2 text-white opacity-50 cursor-not-allowed text-center uppercase"
                     >
-                      Out of stock
+                      Plus de stock
                     </div>
                   )}
                 </Fragment>
               )}
-              {/* Incart and out of stock button End */}
             </div>
           </div>
         </div>
       </section>
-      {/* Product Details Section two */}
       <ProductDetailsSectionTwo />
     </Fragment>
   );

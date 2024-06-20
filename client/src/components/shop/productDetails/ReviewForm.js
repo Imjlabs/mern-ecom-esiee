@@ -58,13 +58,12 @@ const ReviewForm = (props) => {
       ) : (
         <div className="mb-12 md:mx-16 lg:mx-20 xl:mx-24 flex flex-col">
           <div className="flex flex-col space-y-2">
-            <span className="text-2xl font-medium">Add a review</span>
+            <span className="text-2xl font-medium">Ajouter un commentaire</span>
             <span className="text-gray-600 text-sm">
-              Your email address will not be published. Required fields are
-              marked *
+            Votre adresse email ne sera pas publiée. Les champs obligatoires sont
+            marqué par un *
             </span>
           </div>
-          {/* Input Rating */}
           <div className="mb-4">
             <fieldset
               onChange={(e) => setFdata({ ...fData, rating: e.target.value })}
@@ -128,11 +127,10 @@ const ReviewForm = (props) => {
               />
             </fieldset>
           </div>
-          {/* Review Form */}
           <div className="space-y-4">
             <div className="flex flex-col">
               <label htmlFor="textArea">
-                Review <span className="text-sm text-gray-600">*</span>
+                Commentaire <span className="text-sm text-gray-600">*</span>
               </label>
               <textarea
                 onChange={(e) => setFdata({ ...fData, review: e.target.value })}
@@ -142,7 +140,7 @@ const ReviewForm = (props) => {
                 id="textArea"
                 cols={30}
                 rows={3}
-                placeholder="Your review..."
+                placeholder="Ecriver ici votre commentaire..."
               />
             </div>
             <div
@@ -150,7 +148,7 @@ const ReviewForm = (props) => {
               style={{ background: "#303031" }}
               className="inline-block rounded px-4 py-2 text-white text-center cursor-pointer"
             >
-              Submit
+              Commenter
             </div>
           </div>
         </div>
