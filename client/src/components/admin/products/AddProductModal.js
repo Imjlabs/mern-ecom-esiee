@@ -14,7 +14,7 @@ const AddProductDetail = ({ categories }) => {
     pName: "",
     pDescription: "",
     pStatus: "Active",
-    pImage: null, // Initial value will be null or empty array
+    pImage: null,
     pCategory: "",
     pPrice: "",
     pOffer: 0,
@@ -91,16 +91,13 @@ const AddProductDetail = ({ categories }) => {
 
   return (
     <Fragment>
-      {/* Black Overlay */}
       <div
         onClick={(e) => dispatch({ type: "addProductModal", payload: false })}
         className={`${
           data.addProductModal ? "" : "hidden"
         } fixed top-0 left-0 z-30 w-full h-full bg-black opacity-50`}
       />
-      {/* End Black Overlay */}
 
-      {/* Modal Start */}
       <div
         className={`${
           data.addProductModal ? "" : "hidden"
@@ -109,9 +106,8 @@ const AddProductDetail = ({ categories }) => {
         <div className="mt-32 md:mt-0 relative bg-white w-11/12 md:w-3/6 shadow-lg flex flex-col items-center space-y-4 px-4 py-4 md:px-8">
           <div className="flex items-center justify-between w-full pt-4">
             <span className="text-left font-semibold text-2xl tracking-wider">
-              Add Product
+              Ajouter un produit
             </span>
-            {/* Close Modal */}
             <span
               style={{ background: "#303031" }}
               onClick={(e) =>
@@ -192,10 +188,9 @@ const AddProductDetail = ({ categories }) => {
                 rows={2}
               />
             </div>
-            {/* Most Important part for uploading multiple image */}
             <div className="flex flex-col mt-4">
               <label htmlFor="image">Image du produit *</label>
-              <span className="text-gray-600 text-xs">Must need 2 images</span>
+              <span className="text-gray-600 text-xs">Il faut deux images</span>
               <input
                 onChange={(e) =>
                   setFdata({
@@ -212,7 +207,6 @@ const AddProductDetail = ({ categories }) => {
                 multiple
               />
             </div>
-            {/* Most Important part for uploading multiple image */}
             <div className="flex space-x-1 py-4">
               <div className="w-1/2 flex flex-col space-y-1">
                 <label htmlFor="status">Statut du produit *</label>
@@ -231,10 +225,10 @@ const AddProductDetail = ({ categories }) => {
                   id="status"
                 >
                   <option name="status" value="Active">
-                    Active
+                    Activer
                   </option>
                   <option name="status" value="Disabled">
-                    Disabled
+                    Désactiver
                   </option>
                 </select>
               </div>

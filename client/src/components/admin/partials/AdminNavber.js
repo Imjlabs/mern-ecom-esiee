@@ -14,7 +14,6 @@ const AdminNavber = (props) => {
   return (
     <Fragment>
       <nav className="sticky z-10 flex items-center shadow-md justify-between px-4 py-4 md:px-8 top-0 w-full bg-white">
-        {/*  Large Screen Show  */}
         <div className="hidden lg:block lg:flex lg:items-center lg:space-x-4 mr-32">
           <span>
             <svg
@@ -33,7 +32,6 @@ const AdminNavber = (props) => {
             </svg>
           </span>
         </div>
-        {/*  Large Screen Show  */}
         <div className="hidden lg:block">
           <span
             onClick={(e) => history.push("/admin/dashboard")}
@@ -43,7 +41,6 @@ const AdminNavber = (props) => {
             ShopSphere
           </span>
         </div>
-        {/* Small Screen Show */}
         <div className="lg:hidden flex items-center">
           <svg
             id="hamburgerBtn"
@@ -68,7 +65,6 @@ const AdminNavber = (props) => {
             ShopSphere
           </span>
         </div>
-        {/* Both Screen show */}
         <div className="flex items-center">
           <div className="hover:bg-gray-200 rounded-lg p-2" title="Search">
             <svg
@@ -102,7 +98,6 @@ const AdminNavber = (props) => {
               />
             </svg>
           </div>
-          {/* Logout Button Dropdown */}
           <div
             className="userDropdownBtn hover:bg-gray-200 px-2 py-2 rounded-lg relative"
             title="Logout"
@@ -196,8 +191,7 @@ const AdminNavber = (props) => {
             </div>
           </div>
         </div>
-        {/* Mobile Navber */}
-        {/* End Mobile Navber */}
+
       </nav>
     </Fragment>
   );

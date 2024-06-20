@@ -106,9 +106,7 @@ const EditProductModal = (props) => {
           data.editProductModal.modal ? "" : "hidden"
         } fixed top-0 left-0 z-30 w-full h-full bg-black opacity-50`}
       />
-      {/* End Black Overlay */}
 
-      {/* Modal Start */}
       <div
         className={`${
           data.editProductModal.modal ? "" : "hidden"
@@ -200,7 +198,6 @@ const EditProductModal = (props) => {
                 rows={2}
               />
             </div>
-            {/* Most Important part for uploading multiple image */}
             <div className="flex flex-col mt-4">
               <label htmlFor="image">Image du produit *</label>
               {editformData.pImages ? (
