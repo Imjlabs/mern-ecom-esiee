@@ -11,12 +11,10 @@ export const getAllProduct = async () => {
 };
 
 export const createPorductImage = async ({ pImage }) => {
-  /* Most important part for uploading multiple image  */
   let formData = new FormData();
   for (const file of pImage) {
     formData.append("pImage", file);
   }
-  /* Most important part for uploading multiple image  */
 };
 
 export const createProduct = async ({
@@ -29,12 +27,10 @@ export const createProduct = async ({
   pPrice,
   pOffer,
 }) => {
-  /* Most important part for uploading multiple image  */
   let formData = new FormData();
   for (const file of pImage) {
     formData.append("pImage", file);
   }
-  /* Most important part for uploading multiple image  */
   formData.append("pName", pName);
   formData.append("pDescription", pDescription);
   formData.append("pStatus", pStatus);
@@ -53,14 +49,12 @@ export const createProduct = async ({
 
 export const editProduct = async (product) => {
   console.log(product);
-  /* Most important part for updating multiple image  */
   let formData = new FormData();
   if (product.pEditImages) {
     for (const file of product.pEditImages) {
       formData.append("pEditImages", file);
     }
   }
-  /* Most important part for updating multiple image  */
   formData.append("pId", product.pId);
   formData.append("pName", product.pName);
   formData.append("pDescription", product.pDescription);
