@@ -118,7 +118,7 @@ const CartModal = () => {
                               <span className="text-sm text-gray-400">
                                 Total :
                               </span>{" "}
-                              ${subTotal(item._id, item.pPrice)}.00
+                              {subTotal(item._id, item.pPrice)}.00 €
                             </div>{" "}
                           </div>
                           <div
@@ -167,7 +167,7 @@ const CartModal = () => {
                       cartModalOpen();
                     }}
                   >
-                    Payez ${data.PaimecartTotalCost}.00
+                    Payez {data.PaimecartTotalCost}.00 €
                   </div>
                 ) : (
                   <div
@@ -185,7 +185,7 @@ const CartModal = () => {
                       });
                     }}
                   >
-                    Payez ${data.cartTotalCost}.00
+                    Payez {data.cartTotalCost}.00 €
                   </div>
                 )}
               </Fragment>

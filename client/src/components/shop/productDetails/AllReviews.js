@@ -46,7 +46,6 @@ const AllReviews = (props) => {
         {fData.success ? Alert("red", fData.success) : ""}
       </div>
       <div className="mt-6 mb-12 md:mx-16 lg:mx-20 xl:mx-24">
-        {/* List start */}
         {pRatingsReviews.length > 0 ? (
           pRatingsReviews.map((item, index) => {
             return (

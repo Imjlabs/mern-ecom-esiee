@@ -11,7 +11,6 @@ const Layout = ({ children }) => {
         <Navber />
         <LoginSignup />
         <CartModal />
-        {/* All Children pass from here */}
         {children}
       </div>
       <Footer />

@@ -11,7 +11,6 @@ const SingleProduct = (props) => {
   const { products } = data;
   const history = useHistory();
 
-  /* WhisList State */
   const [wList, setWlist] = useState(
     JSON.parse(localStorage.getItem("wishList"))
   );
@@ -95,8 +94,7 @@ const SingleProduct = (props) => {
                     </span>
                   </div>
                 </div>
-                <div>${item.pPrice}.00</div>
-                {/* WhisList Logic  */}
+                <div>{item.pPrice}.00 €</div>
                 <div className="absolute top-0 right-0 mx-2 my-2 md:mx-4">
                   <svg
                     onClick={(e) => isWishReq(e, item._id, setWlist)}
@@ -131,7 +129,6 @@ const SingleProduct = (props) => {
                     />
                   </svg>
                 </div>
-                {/* WhisList Logic End */}
               </div>
             </Fragment>
           );

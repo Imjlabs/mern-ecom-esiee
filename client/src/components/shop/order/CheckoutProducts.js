@@ -48,15 +48,14 @@ export const CheckoutComponent = (props) => {
             d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
           ></path>
         </svg>
-        Please wait untill finish
+        Veuillez patientez
       </div>
     );
   }
   return (
     <Fragment>
       <section className="mx-4 mt-20 md:mx-12 md:mt-32 lg:mt-24">
-        <div className="text-2xl mx-2">Order</div>
-        {/* Product List */}
+        <div className="text-2xl mx-2">Commande</div>
         <div className="flex flex-col md:flex md:space-x-2 md:flex-row">
           <div className="md:w-1/2">
             <CheckoutProducts products={data.cartProduct} />
@@ -77,7 +76,7 @@ export const CheckoutComponent = (props) => {
                   )}
                   <div className="flex flex-col py-2">
                     <label htmlFor="address" className="pb-2">
-                      Dalivery Address
+                      Adresse de livraison
                     </label>
                     <input
                       value={state.address}
@@ -96,7 +95,7 @@ export const CheckoutComponent = (props) => {
                   </div>
                   <div className="flex flex-col py-2 mb-2">
                     <label htmlFor="phone" className="pb-2">
-                      Phone
+                      Téléphone
                     </label>
                     <input
                       value={state.phone}
@@ -137,7 +136,7 @@ export const CheckoutComponent = (props) => {
                     className="w-full px-4 py-2 text-center text-white font-semibold cursor-pointer"
                     style={{ background: "#303031" }}
                   >
-                    Pay now
+                    Payez maintenant
                   </div>
                 </div>
               </Fragment>
@@ -190,20 +189,20 @@ const CheckoutProducts = ({ products }) => {
                     {product.pName}
                   </div>
                   <div className="md:ml-6 font-semibold text-gray-600 text-sm">
-                    Price : ${product.pPrice}.00{" "}
+                    Prix : €{product.pPrice}.00{" "}
                   </div>
                   <div className="md:ml-6 font-semibold text-gray-600 text-sm">
-                    Quantitiy : {quantity(product._id)}
+                    Quantité : {quantity(product._id)}
                   </div>
                   <div className="font-semibold text-gray-600 text-sm">
-                    Subtotal : ${subTotal(product._id, product.pPrice)}.00
+                    Total : {subTotal(product._id, product.pPrice)}.00 €
                   </div>
                 </div>
               </div>
             );
           })
         ) : (
-          <div>No product found for checkout</div>
+          <div>Aucun Produit</div>
         )}
       </div>
     </Fragment>
