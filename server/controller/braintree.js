@@ -35,7 +35,7 @@ class brainTree {
         }
 
         if (result.success) {
-          console.log("Transaction ID: " + result.transaction.id);
+          console.log("ID de transaction : " + result.transaction.id);
           return res.json(result);
         } else {
           console.error(result.message);

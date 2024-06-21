@@ -68,7 +68,6 @@ const AllReviews = (props) => {
                     </div>
                     <div className="flex flex-col">
                       <div className="flex">
-                        {/* Yellow Star */}
                         {[...Array(Number(item.rating))].map((index) => {
                           return (
                             <span key={index}>
@@ -83,7 +82,6 @@ const AllReviews = (props) => {
                             </span>
                           );
                         })}
-                        {/* White Star */}
                         {[...Array(5 - Number(item.rating))].map((index) => {
                           return (
                             <span key={index}>
@@ -140,7 +138,7 @@ const AllReviews = (props) => {
             );
           })
         ) : (
-          <div>No Review found</div>
+          <div>Aucun commentaire trouvé</div>
         )}
       </div>
     </Fragment>

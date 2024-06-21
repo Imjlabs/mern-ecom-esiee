@@ -19,7 +19,7 @@ class Order {
   async getOrderByUser(req, res) {
     let { uId } = req.body;
     if (!uId) {
-      return res.json({ message: "All filled must be required" });
+      return res.json({ message: "Tous les champs sont requis" });
     } else {
       try {
         let Order = await orderModel
@@ -46,7 +46,7 @@ class Order {
       !address ||
       !phone
     ) {
-      return res.json({ message: "All filled must be required" });
+      return res.json({ message: "Tous les champs sont requis" });
     } else {
       try {
         let newOrder = new orderModel({
@@ -59,7 +59,7 @@ class Order {
         });
         let save = await newOrder.save();
         if (save) {
-          return res.json({ success: "Order created successfully" });
+          return res.json({ success: "Commande crée avec succès" });
         }
       } catch (err) {
         return res.json({ error: error });
@@ -70,7 +70,7 @@ class Order {
   async postUpdateOrder(req, res) {
     let { oId, status } = req.body;
     if (!oId || !status) {
-      return res.json({ message: "All filled must be required" });
+      return res.json({ message: "Tous les champs sont requis" });
     } else {
       let currentOrder = orderModel.findByIdAndUpdate(oId, {
         status: status,
@@ -78,7 +78,7 @@ class Order {
       });
       currentOrder.exec((err, result) => {
         if (err) console.log(err);
-        return res.json({ success: "Order updated successfully" });
+        return res.json({ success: "Commande mis à jour avec succès" });
       });
     }
   }
@@ -86,12 +86,12 @@ class Order {
   async postDeleteOrder(req, res) {
     let { oId } = req.body;
     if (!oId) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tous les champs sont requis" });
     } else {
       try {
         let deleteOrder = await orderModel.findByIdAndDelete(oId);
         if (deleteOrder) {
-          return res.json({ success: "Order deleted successfully" });
+          return res.json({ success: "Commande supprimé avec succès" });
         }
       } catch (error) {
         console.log(error);

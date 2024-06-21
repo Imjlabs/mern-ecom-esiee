@@ -24,7 +24,7 @@ class Category {
         if (err) {
           console.log(err);
         }
-        return res.json({ error: "All filled must be required" });
+        return res.json({ error: "Tous les champs sont requis" });
       });
     } else {
       cName = toTitleCase(cName);
@@ -35,7 +35,7 @@ class Category {
             if (err) {
               console.log(err);
             }
-            return res.json({ error: "Category already exists" });
+            return res.json({ error: "La catégorie existe déja" });
           });
         } else {
           let newCategory = new categoryModel({
@@ -46,7 +46,7 @@ class Category {
           });
           await newCategory.save((err) => {
             if (!err) {
-              return res.json({ success: "Category created successfully" });
+              return res.json({ success: "Catégorie crée" });
             }
           });
         }
@@ -59,7 +59,7 @@ class Category {
   async postEditCategory(req, res) {
     let { cId, cDescription, cStatus } = req.body;
     if (!cId || !cDescription || !cStatus) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tous les champs sont requis" });
     }
     try {
       let editCategory = categoryModel.findByIdAndUpdate(cId, {
@@ -69,7 +69,7 @@ class Category {
       });
       let edit = await editCategory.exec();
       if (edit) {
-        return res.json({ success: "Category edit successfully" });
+        return res.json({ success: "Modification de catégorie réussi" });
       }
     } catch (err) {
       console.log(err);
@@ -79,7 +79,7 @@ class Category {
   async getDeleteCategory(req, res) {
     let { cId } = req.body;
     if (!cId) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Modification de catégorie réussi" });
     } else {
       try {
         let deletedCategoryFile = await categoryModel.findById(cId);
@@ -87,12 +87,11 @@ class Category {
 
         let deleteCategory = await categoryModel.findByIdAndDelete(cId);
         if (deleteCategory) {
-          // Delete Image from uploads -> categories folder 
           fs.unlink(filePath, (err) => {
             if (err) {
               console.log(err);
             }
-            return res.json({ success: "Category deleted successfully" });
+            return res.json({ success: "Suppresion de catégorie réussi" });
           });
         }
       } catch (err) {

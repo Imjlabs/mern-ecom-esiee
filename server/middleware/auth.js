@@ -11,7 +11,7 @@ exports.loginCheck = (req, res, next) => {
     next();
   } catch (err) {
     res.json({
-      error: "You must be logged in",
+      error: "Vous devez être connecté",
     });
   }
 };
@@ -23,7 +23,7 @@ exports.isAuth = (req, res, next) => {
     !req.userDetails._id ||
     loggedInUserId != req.userDetails._id
   ) {
-    res.status(403).json({ error: "You are not authenticate" });
+    res.status(403).json({ error: "Vous n'êtes pas authentifié" });
   }
   next();
 };
@@ -31,9 +31,8 @@ exports.isAuth = (req, res, next) => {
 exports.isAdmin = async (req, res, next) => {
   try {
     let reqUser = await userModel.findById(req.body.loggedInUserId);
-    // If user role 0 that's mean not admin it's customer
     if (reqUser.userRole === 0) {
-      res.status(403).json({ error: "Access denied" });
+      res.status(403).json({ error: "Access Refusé" });
     }
     next();
   } catch {
