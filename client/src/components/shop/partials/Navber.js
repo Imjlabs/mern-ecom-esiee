@@ -29,7 +29,6 @@ const Navber = (props) => {
 
   return (
     <Fragment>
-      {/* Navber Section */}
       <nav className="fixed top-0 w-full z-20 shadow-lg lg:shadow-none bg-white">
         <div className="m-4 md:mx-12 md:my-6 grid grid-cols-4 lg:grid-cols-3">
           <div className="hidden lg:block col-span-1 flex text-gray-600 mt-1">
@@ -280,7 +279,7 @@ const Navber = (props) => {
                                 />
                               </svg>
                             </span>
-                            <span>Panneau administrateur</span>
+                            <span>Panneau Administrateur</span>
                           </span>
                           <span
                             onClick={(e) => logout()}
@@ -311,7 +310,6 @@ const Navber = (props) => {
                 </div>
               </Fragment>
             ) : (
-              /* Login Modal Button */
               <div
                 onClick={(e) => loginModalOpen()}
                 className="cursor-pointer hover:bg-gray-200 px-2 py-2 rounded-lg"
@@ -333,7 +331,6 @@ const Navber = (props) => {
                 </svg>
               </div>
             )}
-            {/* Cart Modal Button */}
             <div
               onClick={(e) => cartModalOpen()}
               className="hover:bg-gray-200 px-2 py-2 rounded-lg relative cursor-pointer"
@@ -388,7 +385,6 @@ const Navber = (props) => {
           </div>
         </div>
       </nav>
-      {/* End Navber Section */}
     </Fragment>
   );
 };
