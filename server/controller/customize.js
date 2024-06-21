@@ -20,7 +20,7 @@ class Customize {
   async uploadSlideImage(req, res) {
     let image = req.file.filename;
     if (!image) {
-      return res.json({ error: "All field required" });
+      return res.json({ error: "Tous les champs sont requis" });
     }
     try {
       let newCustomzie = new customizeModel({
@@ -28,7 +28,7 @@ class Customize {
       });
       let save = await newCustomzie.save();
       if (save) {
-        return res.json({ success: "Image upload successfully" });
+        return res.json({ success: "Image téléchargé avec succès" });
       }
     } catch (err) {
       console.log(err);
@@ -38,7 +38,7 @@ class Customize {
   async deleteSlideImage(req, res) {
     let { id } = req.body;
     if (!id) {
-      return res.json({ error: "All field required" });
+      return res.json({ error: "Tous les champs sont requis" });
     } else {
       try {
         let deletedSlideImage = await customizeModel.findById(id);
@@ -46,12 +46,11 @@ class Customize {
 
         let deleteImage = await customizeModel.findByIdAndDelete(id);
         if (deleteImage) {
-          // Delete Image from uploads -> customizes folder
           fs.unlink(filePath, (err) => {
             if (err) {
               console.log(err);
             }
-            return res.json({ success: "Image deleted successfully" });
+            return res.json({ success: "Image supprimée" });
           });
         }
       } catch (err) {

@@ -45,7 +45,6 @@ class Product {
     let { pName, pDescription, pPrice, pQuantity, pCategory, pOffer, pStatus } =
       req.body;
     let images = req.files;
-    // Validation
     if (
       !pName |
       !pDescription |
@@ -58,14 +57,12 @@ class Product {
       Product.deleteImages(images, "file");
       return res.json({ error: "Tous les renseignements sont obligatoires" });
     }
-    // Validate Name and description
     else if (pName.length > 255 || pDescription.length > 3000) {
       Product.deleteImages(images, "file");
       return res.json({
         error: "Le nom et la description ne doivent pas comporter 3 000 caractères.",
       });
     }
-    // Validate Images
     else if (images.length !== 2) {
       Product.deleteImages(images, "file");
       return res.json({ error: "Il faut deux images au minimun" });
@@ -109,7 +106,6 @@ class Product {
     } = req.body;
     let editImages = req.files;
 
-    // Validate other fileds
     if (
       !pId |
       !pName |
@@ -122,13 +118,11 @@ class Product {
     ) {
       return res.json({ error: "Tous les renseignements sont obligatoires" });
     }
-    // Validate Name and description
     else if (pName.length > 255 || pDescription.length > 3000) {
       return res.json({
         error: "Le nom et la description ne doivent pas comporter 3 000 caractères.",
       });
     }
-    // Validate Update Images
     else if (editImages && editImages.length == 1) {
       Product.deleteImages(editImages, "file");
       return res.json({ error: "Must need to provide 2 images" });
@@ -171,7 +165,6 @@ class Product {
         let deleteProductObj = await productModel.findById(pId);
         let deleteProduct = await productModel.findByIdAndDelete(pId);
         if (deleteProduct) {
-          // Delete Image from uploads -> products folder
           Product.deleteImages(deleteProductObj.pImages, "string");
           return res.json({ success: "Product deleted successfully" });
         }
@@ -203,7 +196,7 @@ class Product {
   async getProductByCategory(req, res) {
     let { catId } = req.body;
     if (!catId) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tous les champs sont requis" });
     } else {
       try {
         let products = await productModel
@@ -213,7 +206,7 @@ class Product {
           return res.json({ Products: products });
         }
       } catch (err) {
-        return res.json({ error: "Search product wrong" });
+        return res.json({ error: "Erreur de recherche de produit "});
       }
     }
   }

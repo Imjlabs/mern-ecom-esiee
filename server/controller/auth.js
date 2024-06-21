@@ -24,17 +24,16 @@ class Auth {
     }
   }
 
-  /* User Registration/Signup controller  */
   async postSignup(req, res) {
     let { name, email, password, cPassword } = req.body;
     let error = {};
     if (!name || !email || !password || !cPassword) {
       error = {
         ...error,
-        name: "Filed must not be empty",
-        email: "Filed must not be empty",
-        password: "Filed must not be empty",
-        cPassword: "Filed must not be empty",
+        name: "Le champs ne doit pas être vide",
+        email: "Le champs ne doit pas être vide",
+        password: "Le champs ne doit pas être vide",
+        cPassword: "Le champs ne doit pas être vide",
       };
       return res.json({ error });
     }
@@ -53,7 +52,6 @@ class Auth {
           };
           return res.json({ error });
         } else {
-          // If Email & Number exists in Database then:
           try {
             password = bcrypt.hashSync(password, 10);
             const data = await userModel.findOne({ email: email });
@@ -62,7 +60,7 @@ class Auth {
                 ...error,
                 password: "",
                 name: "",
-                email: "Email already exists",
+                email: "L'email existe déja",
               };
               return res.json({ error });
             } else {
@@ -70,14 +68,13 @@ class Auth {
                 name,
                 email,
                 password,
-                // ========= Here role 1 for admin signup role 0 for customer signup =========
-                userRole: 1, // Field Name change to userRole from role
+                userRole: 0, 
               });
               newUser
                 .save()
                 .then((data) => {
                   return res.json({
-                    success: "Account create successfully. Please login",
+                    success: "Incription réussi, veuillez vous connecter",
                   });
                 })
                 .catch((err) => {
@@ -93,26 +90,25 @@ class Auth {
           ...error,
           password: "",
           name: "",
-          email: "Email is not valid",
+          email: "Email non valide",
         };
         return res.json({ error });
       }
     }
   }
 
-  /* User Login/Signin controller  */
   async postSignin(req, res) {
     let { email, password } = req.body;
     if (!email || !password) {
       return res.json({
-        error: "Fields must not be empty",
+        error: "Le champs ne doit pas être vide",
       });
     }
     try {
       const data = await userModel.findOne({ email: email });
       if (!data) {
         return res.json({
-          error: "Invalid email or password",
+          error: "Email ou mot de passe invalide",
         });
       } else {
         const login = await bcrypt.compare(password, data.password);
@@ -128,7 +124,7 @@ class Auth {
           });
         } else {
           return res.json({
-            error: "Invalid email or password",
+            error: "Email ou mot de passe invalide",
           });
         }
       }

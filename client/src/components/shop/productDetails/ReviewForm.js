@@ -7,7 +7,7 @@ import { getSingleProduct } from "./FetchApi";
 
 const ReviewForm = (props) => {
   const { data, dispatch } = useContext(LayoutContext);
-  let { id } = useParams(); // Product Id
+  let { id } = useParams();
 
   const [fData, setFdata] = useState({
     rating: "",
@@ -79,7 +79,7 @@ const ReviewForm = (props) => {
               <label
                 className="full"
                 htmlFor="star5"
-                title="Awesome - 5 stars"
+                title="Parfait !"
               />
               <input
                 type="radio"
@@ -91,7 +91,7 @@ const ReviewForm = (props) => {
               <label
                 className="full"
                 htmlFor="star4"
-                title="Pretty good - 4 stars"
+                title="Très bien"
               />
               <input
                 type="radio"
@@ -100,7 +100,7 @@ const ReviewForm = (props) => {
                 name="rating"
                 defaultValue={3}
               />
-              <label className="full" htmlFor="star3" title="Meh - 3 stars" />
+              <label className="full" htmlFor="star3" title="Bien" />
               <input
                 type="radio"
                 className="rating"
@@ -111,7 +111,7 @@ const ReviewForm = (props) => {
               <label
                 className="full"
                 htmlFor="star2"
-                title="Kinda bad - 2 stars"
+                title="Correct"
               />
               <input
                 type="radio"
@@ -123,7 +123,7 @@ const ReviewForm = (props) => {
               <label
                 className="full"
                 htmlFor="star1"
-                title="Sucks big time - 1 star"
+                title="Mauvais"
               />
             </fieldset>
           </div>

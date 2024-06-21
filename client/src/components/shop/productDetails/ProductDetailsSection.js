@@ -359,9 +359,7 @@ const ProductDetailsSection = (props) => {
                     </span>
                   </div>
                 )}
-                {/* Quantity Button End */}
               </div>
-              {/* Incart and out of stock button */}
               {sProduct.pQuantity !== 0 ? (
                 <Fragment>
                   {layoutData.inCart !== null &&
