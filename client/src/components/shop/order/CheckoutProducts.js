@@ -90,7 +90,7 @@ export const CheckoutComponent = (props) => {
                       type="text"
                       id="address"
                       className="border px-4 py-2"
-                      placeholder="Address..."
+                      placeholder="Adresse de livraison..."
                     />
                   </div>
                   <div className="flex flex-col py-2 mb-2">
@@ -109,7 +109,7 @@ export const CheckoutComponent = (props) => {
                       type="number"
                       id="phone"
                       className="border px-4 py-2"
-                      placeholder="+880"
+                      placeholder="+33"
                     />
                   </div>
                   <DropIn
