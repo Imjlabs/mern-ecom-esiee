@@ -214,7 +214,7 @@ class Product {
   async getProductByPrice(req, res) {
     let { price } = req.body;
     if (!price) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tous les champs sont requis !" });
     } else {
       try {
         let products = await productModel
@@ -225,7 +225,7 @@ class Product {
           return res.json({ Products: products });
         }
       } catch (err) {
-        return res.json({ error: "Filter product wrong" });
+        return res.json({ error: "Filtre produit incorrect" });
       }
     }
   }
@@ -233,7 +233,7 @@ class Product {
   async getWishProduct(req, res) {
     let { productArray } = req.body;
     if (!productArray) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tous les champs sont requis" });
     } else {
       try {
         let wishProducts = await productModel.find({
@@ -243,7 +243,7 @@ class Product {
           return res.json({ Products: wishProducts });
         }
       } catch (err) {
-        return res.json({ error: "Filter product wrong" });
+        return res.json({ error: "Filtre produits incorrect" });
       }
     }
   }
@@ -251,7 +251,7 @@ class Product {
   async getCartProduct(req, res) {
     let { productArray } = req.body;
     if (!productArray) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tous les champs sont requis !" });
     } else {
       try {
         let cartProducts = await productModel.find({
@@ -261,7 +261,7 @@ class Product {
           return res.json({ Products: cartProducts });
         }
       } catch (err) {
-        return res.json({ error: "Cart product wrong" });
+        return res.json({ error: "Panier produit incorrect" });
       }
     }
   }
@@ -269,13 +269,13 @@ class Product {
   async postAddReview(req, res) {
     let { pId, uId, rating, review } = req.body;
     if (!pId || !rating || !review || !uId) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tous les champs sont requis" });
     } else {
       let checkReviewRatingExists = await productModel.findOne({ _id: pId });
       if (checkReviewRatingExists.pRatingsReviews.length > 0) {
         checkReviewRatingExists.pRatingsReviews.map((item) => {
           if (item.user === uId) {
-            return res.json({ error: "Your already reviewd the product" });
+            return res.json({ error: "Tu as déja publié un commentaire pour ce produit" });
           } else {
             try {
               let newRatingReview = productModel.findByIdAndUpdate(pId, {
@@ -291,10 +291,10 @@ class Product {
                 if (err) {
                   console.log(err);
                 }
-                return res.json({ success: "Thanks for your review" });
+                return res.json({ success: "Merci pour le commentaire" });
               });
             } catch (err) {
-              return res.json({ error: "Cart product wrong" });
+              return res.json({ error: "Produit panier incorrect" });
             }
           }
         });
@@ -309,10 +309,10 @@ class Product {
             if (err) {
               console.log(err);
             }
-            return res.json({ success: "Thanks for your review" });
+            return res.json({ success: "Merci pour le commentaire" });
           });
         } catch (err) {
-          return res.json({ error: "Cart product wrong" });
+          return res.json({ error: "Produit panier incorrect" });
         }
       }
     }
@@ -321,7 +321,7 @@ class Product {
   async deleteReview(req, res) {
     let { rId, pId } = req.body;
     if (!rId) {
-      return res.json({ message: "All filled must be required" });
+      return res.json({ message: "Tous les champs sont requis" });
     } else {
       try {
         let reviewDelete = productModel.findByIdAndUpdate(pId, {
@@ -331,7 +331,7 @@ class Product {
           if (err) {
             console.log(err);
           }
-          return res.json({ success: "Your review is deleted" });
+          return res.json({ success: "Ton commentaire à été supprimé" });
         });
       } catch (err) {
         console.log(err);
