@@ -1,16 +1,16 @@
-import React, { Fragment, useState, useEffect, useContext } from "react";
-import { useParams } from "react-router-dom";
-import { ProductDetailsContext } from "./index";
-import { LayoutContext } from "../layout";
-import Submenu from "./Submenu";
-import ProductDetailsSectionTwo from "./ProductDetailsSectionTwo";
+import React, { Fragment, useState, useEffect, useContext } from 'react';
+import { useParams } from 'react-router-dom';
+import { ProductDetailsContext } from './index';
+import { LayoutContext } from '../layout';
+import Submenu from './Submenu';
+import ProductDetailsSectionTwo from './ProductDetailsSectionTwo';
 
-import { getSingleProduct } from "./FetchApi";
-import { cartListProduct } from "../partials/FetchApi";
+import { getSingleProduct } from './FetchApi';
+import { cartListProduct } from '../partials/FetchApi';
 
-import { isWishReq, unWishReq, isWish } from "../home/Mixins";
-import { updateQuantity, slideImage, addToCart, cartList } from "./Mixins";
-import { totalCost } from "../partials/Mixins";
+import { isWishReq, unWishReq, isWish } from '../home/Mixins';
+import { updateQuantity, slideImage, addToCart, cartList } from './Mixins';
+import { totalCost } from '../partials/Mixins';
 
 const apiURL = process.env.REACT_APP_API_URL;
 
@@ -29,7 +29,7 @@ const ProductDetailsSection = (props) => {
   const [, setAlertq] = useState(false); // Alert when quantity greater than stock
 
   const [wList, setWlist] = useState(
-    JSON.parse(localStorage.getItem("wishList"))
+    JSON.parse(localStorage.getItem('wishList'))
   ); // Wishlist State Control
 
   useEffect(() => {
@@ -38,18 +38,18 @@ const ProductDetailsSection = (props) => {
   }, []);
 
   const fetchData = async () => {
-    dispatch({ type: "loading", payload: true });
+    dispatch({ type: 'loading', payload: true });
     try {
       let responseData = await getSingleProduct(id);
       setTimeout(() => {
         if (responseData.Product) {
           layoutDispatch({
-            type: "singleProductDetail",
+            type: 'singleProductDetail',
             payload: responseData.Product,
           }); // Dispatch in layout context
           setPimages(responseData.Product.pImages);
-          dispatch({ type: "loading", payload: false });
-          layoutDispatch({ type: "inCart", payload: cartList() }); // This function change cart in cart state
+          dispatch({ type: 'loading', payload: false });
+          layoutDispatch({ type: 'inCart', payload: cartList() }); // This function change cart in cart state
         }
         if (responseData.error) {
           console.log(responseData.error);
@@ -65,7 +65,7 @@ const ProductDetailsSection = (props) => {
     try {
       let responseData = await cartListProduct();
       if (responseData && responseData.Products) {
-        layoutDispatch({ type: "cartProduct", payload: responseData.Products }); // Layout context Cartproduct fetch and dispatch
+        layoutDispatch({ type: 'cartProduct', payload: responseData.Products }); // Layout context Cartproduct fetch and dispatch
       }
     } catch (error) {
       console.log(error);
@@ -108,20 +108,20 @@ const ProductDetailsSection = (props) => {
           <div className="hidden md:block md:col-span-1 md:flex md:flex-col md:space-y-4 md:mr-2">
             <img
               onClick={(e) =>
-                slideImage("increase", 0, count, setCount, pImages)
+                slideImage('increase', 0, count, setCount, pImages)
               }
               className={`${
-                count === 0 ? "" : "opacity-25"
+                count === 0 ? '' : 'opacity-25'
               } cursor-pointer w-20 h-20 object-cover object-center`}
               src={`${apiURL}/uploads/products/${sProduct.pImages[0]}`}
               alt="pic"
             />
             <img
               onClick={(e) =>
-                slideImage("increase", 1, count, setCount, pImages)
+                slideImage('increase', 1, count, setCount, pImages)
               }
               className={`${
-                count === 1 ? "" : "opacity-25"
+                count === 1 ? '' : 'opacity-25'
               } cursor-pointer w-20 h-20 object-cover object-center`}
               src={`${apiURL}/uploads/products/${sProduct.pImages[1]}`}
               alt="pic"
@@ -137,7 +137,7 @@ const ProductDetailsSection = (props) => {
               <div className="absolute inset-0 flex justify-between items-center mb-4">
                 <svg
                   onClick={(e) =>
-                    slideImage("increase", null, count, setCount, pImages)
+                    slideImage('increase', null, count, setCount, pImages)
                   }
                   className="flex justify-center  w-12 h-12 text-gray-700 opacity-25 cursor-pointer hover:text-yellow-700 hover:opacity-100"
                   fill="none"
@@ -154,7 +154,7 @@ const ProductDetailsSection = (props) => {
                 </svg>
                 <svg
                   onClick={(e) =>
-                    slideImage("increase", null, count, setCount, pImages)
+                    slideImage('increase', null, count, setCount, pImages)
                   }
                   className="flex justify-center  w-12 h-12 text-gray-700 opacity-25 cursor-pointer hover:text-yellow-700 hover:opacity-100"
                   fill="none"
@@ -183,7 +183,7 @@ const ProductDetailsSection = (props) => {
                   <svg
                     onClick={(e) => isWishReq(e, sProduct._id, setWlist)}
                     className={`${
-                      isWish(sProduct._id, wList) && "hidden"
+                      isWish(sProduct._id, wList) && 'hidden'
                     } w-5 h-5 md:w-6 md:h-6 cursor-pointer text-yellow-700`}
                     fill="none"
                     stroke="currentColor"
@@ -200,7 +200,7 @@ const ProductDetailsSection = (props) => {
                   <svg
                     onClick={(e) => unWishReq(e, sProduct._id, setWlist)}
                     className={`${
-                      !isWish(sProduct._id, wList) && "hidden"
+                      !isWish(sProduct._id, wList) && 'hidden'
                     } w-5 h-5 md:w-6 md:h-6 cursor-pointer text-yellow-700`}
                     fill="currentColor"
                     viewBox="0 0 20 20"
@@ -222,16 +222,16 @@ const ProductDetailsSection = (props) => {
               {+quantitiy === +sProduct.pQuantity ? (
                 <span className="text-xs text-red-500">Limite de stock</span>
               ) : (
-                ""
+                ''
               )}
               <div
                 className={`flex justify-between items-center px-4 py-2 border ${
-                  +quantitiy === +sProduct.pQuantity && "border-red-500"
+                  +quantitiy === +sProduct.pQuantity && 'border-red-500'
                 }`}
               >
                 <div
                   className={`${
-                    quantitiy === sProduct.pQuantity && "text-red-500"
+                    quantitiy === sProduct.pQuantity && 'text-red-500'
                   }`}
                 >
                   Quantité
@@ -245,7 +245,7 @@ const ProductDetailsSection = (props) => {
                         <span
                           onClick={(e) =>
                             updateQuantity(
-                              "decrease",
+                              'decrease',
                               sProduct.pQuantity,
                               quantitiy,
                               setQuantitiy,
@@ -270,7 +270,7 @@ const ProductDetailsSection = (props) => {
                         <span
                           onClick={(e) =>
                             updateQuantity(
-                              "increase",
+                              'increase',
                               sProduct.pQuantity,
                               quantitiy,
                               setQuantitiy,
@@ -365,7 +365,7 @@ const ProductDetailsSection = (props) => {
                   {layoutData.inCart !== null &&
                   layoutData.inCart.includes(sProduct._id) === true ? (
                     <div
-                      style={{ background: "#303031" }}
+                      style={{ background: '#303031' }}
                       className={`px-4 py-2 text-white text-center cursor-not-allowed uppercase opacity-75`}
                     >
                       Dans le panier
@@ -384,7 +384,7 @@ const ProductDetailsSection = (props) => {
                           totalCost
                         )
                       }
-                      style={{ background: "#303031" }}
+                      style={{ background: '#303031' }}
                       className={`px-4 py-2 text-white text-center cursor-pointer uppercase`}
                     >
                       Ajouter au panier
@@ -396,14 +396,14 @@ const ProductDetailsSection = (props) => {
                   {layoutData.inCart !== null &&
                   layoutData.inCart.includes(sProduct._id) === true ? (
                     <div
-                      style={{ background: "#303031" }}
+                      style={{ background: '#303031' }}
                       className={`px-4 py-2 text-white text-center cursor-not-allowed uppercase opacity-75`}
                     >
                       Dans le panier
                     </div>
                   ) : (
                     <div
-                      style={{ background: "#303031" }}
+                      style={{ background: '#303031' }}
                       disabled={true}
                       className="px-4 py-2 text-white opacity-50 cursor-not-allowed text-center uppercase"
                     >
