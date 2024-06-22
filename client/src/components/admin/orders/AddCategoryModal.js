@@ -30,7 +30,6 @@ const AddCategoryModal = (props) => {
 
   const submitForm = async (e) => {
     dispatch({ type: "loading", payload: true });
-    // Reset and prevent the form
     e.preventDefault();
     e.target.reset();
 
@@ -81,16 +80,13 @@ const AddCategoryModal = (props) => {
 
   return (
     <Fragment>
-      {/* Black Overlay */}
       <div
         onClick={(e) => dispatch({ type: "addCategoryModal", payload: false })}
         className={`${
           data.addCategoryModal ? "" : "hidden"
         } fixed top-0 left-0 z-30 w-full h-full bg-black opacity-50`}
       />
-      {/* End Black Overlay */}
 
-      {/* Modal Start */}
       <div
         className={`${
           data.addCategoryModal ? "" : "hidden"
