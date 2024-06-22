@@ -1,8 +1,8 @@
-import React, { Fragment, useEffect, useContext, useState } from "react";
-import OrderSuccessMessage from "./OrderSuccessMessage";
-import { HomeContext } from "./";
-import { sliderImages } from "../../admin/dashboardAdmin/Action";
-import { prevSlide, nextSlide } from "./Mixins";
+import React, { Fragment, useEffect, useContext, useState } from 'react';
+import OrderSuccessMessage from './OrderSuccessMessage';
+import { HomeContext } from './';
+import { sliderImages } from '../../admin/dashboardAdmin/Action';
+import { prevSlide, nextSlide } from './Mixins';
 
 const apiURL = process.env.REACT_APP_API_URL;
 
@@ -25,7 +25,7 @@ const Slider = (props) => {
             alt="sliderImage"
           />
         ) : (
-          ""
+          ''
         )}
 
         {data?.sliderImages?.length > 0 ? (
@@ -67,7 +67,7 @@ const Slider = (props) => {
             <div className="absolute inset-0 flex items-center justify-center">
               <a
                 href="#shop"
-                style={{ background: "#303031" }}
+                style={{ background: '#303031' }}
                 className="cursor-pointer box-border text-2xl text-white px-4 py-2 rounded"
               >
                 Achetez maintenant

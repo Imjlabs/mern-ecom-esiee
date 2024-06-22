@@ -1,9 +1,9 @@
-import React, { Fragment, useContext, useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import { HomeContext } from "./index";
-import { getAllCategory } from "../../admin/categories/FetchApi";
-import { getAllProduct, productByPrice } from "../../admin/products/FetchApi";
-import "./style.css";
+import React, { Fragment, useContext, useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import { HomeContext } from './index';
+import { getAllCategory } from '../../admin/categories/FetchApi';
+import { getAllProduct, productByPrice } from '../../admin/products/FetchApi';
+import './style.css';
 
 const apiURL = process.env.REACT_APP_API_URL;
 
@@ -28,7 +28,7 @@ const CategoryList = () => {
   };
 
   return (
-    <div className={`${data.categoryListDropdown ? "" : "hidden"} my-4`}>
+    <div className={`${data.categoryListDropdown ? '' : 'hidden'} my-4`}>
       <hr />
       <div className="py-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {categories && categories.length > 0 ? (
@@ -68,24 +68,24 @@ const FilterList = () => {
   };
 
   const fetchData = async (price) => {
-    if (price === "all") {
+    if (price === 'all') {
       try {
         let responseData = await getAllProduct();
         if (responseData && responseData.Products) {
-          dispatch({ type: "setProducts", payload: responseData.Products });
+          dispatch({ type: 'setProducts', payload: responseData.Products });
         }
       } catch (error) {
         console.log(error);
       }
     } else {
-      dispatch({ type: "loading", payload: true });
+      dispatch({ type: 'loading', payload: true });
       try {
         setTimeout(async () => {
           let responseData = await productByPrice(price);
           if (responseData && responseData.Products) {
             console.log(responseData.Products);
-            dispatch({ type: "setProducts", payload: responseData.Products });
-            dispatch({ type: "loading", payload: false });
+            dispatch({ type: 'setProducts', payload: responseData.Products });
+            dispatch({ type: 'loading', payload: false });
           }
         }, 700);
       } catch (error) {
@@ -95,20 +95,21 @@ const FilterList = () => {
   };
 
   const closeFilterBar = () => {
-    fetchData("all");
-    dispatch({ type: "filterListDropdown", payload: !data.filterListDropdown });
+    fetchData('all');
+    dispatch({ type: 'filterListDropdown', payload: !data.filterListDropdown });
     setRange(0);
   };
 
   return (
-    <div className={`${data.filterListDropdown ? "" : "hidden"} my-4`}>
+    <div className={`${data.filterListDropdown ? '' : 'hidden'} my-4`}>
       <hr />
       <div className="w-full flex flex-col">
         <div className="font-medium py-2">Filtrer par prix</div>
         <div className="flex justify-between items-center">
           <div className="flex flex-col space-y-2  w-2/3 lg:w-2/4">
             <label htmlFor="points" className="text-sm">
-et              <span className="font-semibold text-yellow-700">{range}.00€</span>{" "}
+              et{' '}
+              <span className="font-semibold text-yellow-700">{range}.00€</span>{' '}
             </label>
             <input
               value={range}
@@ -145,27 +146,27 @@ et              <span className="font-semibold text-yellow-700">{range}.00€</s
 
 const Search = () => {
   const { data, dispatch } = useContext(HomeContext);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const [productArray, setPa] = useState(null);
 
   const searchHandle = (e) => {
     setSearch(e.target.value);
     fetchData();
     dispatch({
-      type: "searchHandleInReducer",
+      type: 'searchHandleInReducer',
       payload: e.target.value,
       productArray: productArray,
     });
   };
 
   const fetchData = async () => {
-    dispatch({ type: "loading", payload: true });
+    dispatch({ type: 'loading', payload: true });
     try {
       setTimeout(async () => {
         let responseData = await getAllProduct();
         if (responseData && responseData.Products) {
           setPa(responseData.Products);
-          dispatch({ type: "loading", payload: false });
+          dispatch({ type: 'loading', payload: false });
         }
       }, 700);
     } catch (error) {
@@ -174,16 +175,16 @@ const Search = () => {
   };
 
   const closeSearchBar = () => {
-    dispatch({ type: "searchDropdown", payload: !data.searchDropdown });
+    dispatch({ type: 'searchDropdown', payload: !data.searchDropdown });
     fetchData();
-    dispatch({ type: "setProducts", payload: productArray });
-    setSearch("");
+    dispatch({ type: 'setProducts', payload: productArray });
+    setSearch('');
   };
 
   return (
     <div
       className={`${
-        data.searchDropdown ? "" : "hidden"
+        data.searchDropdown ? '' : 'hidden'
       } my-4 flex items-center justify-between`}
     >
       <input
