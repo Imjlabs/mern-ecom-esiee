@@ -35,7 +35,6 @@ const DashboardCard = (props) => {
           </div>
           <div className="text-lg font-medium">Clients</div>
           <div className="flex items-center space-x-1 text-green-500">
-            <span>7%</span>
             <span>
               <svg
                 className="w-3 h-3"
@@ -76,7 +75,6 @@ const DashboardCard = (props) => {
           </div>
           <div className="text-lg font-medium">Commandes</div>
           <div className="flex items-center space-x-1 text-green-500">
-            <span>10%</span>
             <span>
               <svg
                 className="w-3 h-3"
