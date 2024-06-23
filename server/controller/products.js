@@ -148,7 +148,7 @@ class Product {
         let editProduct = productModel.findByIdAndUpdate(pId, editData);
         editProduct.exec((err) => {
           if (err) console.log(err);
-          return res.json({ success: "Product edit successfully" });
+          return res.json({ success: "Mis à jour du produit réussi !" });
         });
       } catch (err) {
         console.log(err);
