@@ -63,11 +63,11 @@ const SingleProduct = (props) => {
         products.map((item, index) => (
           <div
             key={index}
-            className="relative col-span-1 m-2 w-64 h-80 flex flex-col border rounded-lg overflow-hidden"
+            className="relative col-span-1 m-2 w-70 h-50 flex flex-col border rounded-lg overflow-hidden"
           >
             <img
               onClick={(e) => history.push(`/products/${item._id}`)}
-              className="w-full h-48 object-cover object-top cursor-pointer"
+              className="w-full h-full object-cover cursor-pointer"
               src={`${apiURL}/uploads/products/${item.pImages[0]}`}
               alt={item.pName}
             />
