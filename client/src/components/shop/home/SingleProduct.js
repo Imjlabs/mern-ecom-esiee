@@ -73,7 +73,7 @@ const SingleProduct = (props) => {
             />
             <div className="flex flex-col flex-grow p-2">
               <div className="flex items-center justify-between">
-                <div className="text-gray-600 font-light truncate">
+                <div className="text-black-600 font-light truncate">
                   {item.pName}
                 </div>
                 <div className="flex items-center space-x-1">
@@ -98,7 +98,7 @@ const SingleProduct = (props) => {
                   </span>
                 </div>
               </div>
-              <div className="text-gray-800 font-semibold">
+              <div className="text-black-800 font-semibold">
                 {item.pPrice}.00 €
               </div>
             </div>

@@ -130,7 +130,7 @@ const ProductDetailsSection = (props) => {
           <div className="col-span-2 md:col-span-7">
             <div className="relative">
               <img
-                className="w-full"
+                className="w-full h-auto"
                 src={`${apiURL}/uploads/products/${sProduct.pImages[count]}`}
                 alt="Pic"
               />

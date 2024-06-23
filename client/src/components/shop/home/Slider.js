@@ -31,12 +31,13 @@ const Slider = () => {
 
     return (
         <Fragment>
-            <div className="relative w-full mt-16 bg-gray-100 border-2" data-carousel="slide">
+            <div className="relative w-full h-50 mt-16 bg-gray-100 border-2" data-carousel="slide">
                 {totalSlides > 0 ? (
                     <img
-                        className="w-full"
+                        className="w-full h-49 md:max-w-screen-lg"
                         src={`${apiURL}/uploads/customize/${data.sliderImages[currentSlide].slideImage}`}
                         alt="sliderImage"
+                        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'cover' }}
                     />
                 ) : null}
 
@@ -72,15 +73,6 @@ const Slider = () => {
                                 d="M9 5l7 7-7 7"
                             />
                         </svg>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <a
-                                href="#shop"
-                                style={{ background: '#303031' }}
-                                className="cursor-pointer box-border text-2xl text-white px-4 py-2 rounded"
-                            >
-                                Bienvenu sur le site ShopSphere
-                            </a>
-                        </div>
                     </>
                 ) : null}
             </div>
