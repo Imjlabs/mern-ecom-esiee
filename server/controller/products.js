@@ -3,7 +3,6 @@ const fs = require("fs");
 const path = require("path");
 
 class Product {
-  // Delete Image from uploads -> products folder
   static deleteImages(images, mode) {
     var basePath =
       path.resolve(__dirname + "../../") + "/public/uploads/products/";
@@ -125,7 +124,7 @@ class Product {
     }
     else if (editImages && editImages.length == 1) {
       Product.deleteImages(editImages, "file");
-      return res.json({ error: "Must need to provide 2 images" });
+      return res.json({ error: "Il faut ajouter deux images" });
     } else {
       let editData = {
         pName,
@@ -159,14 +158,14 @@ class Product {
   async getDeleteProduct(req, res) {
     let { pId } = req.body;
     if (!pId) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tous les champs sont requis" });
     } else {
       try {
         let deleteProductObj = await productModel.findById(pId);
         let deleteProduct = await productModel.findByIdAndDelete(pId);
         if (deleteProduct) {
           Product.deleteImages(deleteProductObj.pImages, "string");
-          return res.json({ success: "Product deleted successfully" });
+          return res.json({ success: "Produit supprimé avec succès" });
         }
       } catch (err) {
         console.log(err);
@@ -177,7 +176,7 @@ class Product {
   async getSingleProduct(req, res) {
     let { pId } = req.body;
     if (!pId) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "Tous les champs sont requis" });
     } else {
       try {
         let singleProduct = await productModel

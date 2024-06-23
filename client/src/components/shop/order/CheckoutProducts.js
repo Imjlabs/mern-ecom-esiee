@@ -189,7 +189,7 @@ const CheckoutProducts = ({ products }) => {
                     {product.pName}
                   </div>
                   <div className="md:ml-6 font-semibold text-gray-600 text-sm">
-                    Prix : €{product.pPrice}.00{" "}
+                    Prix : {product.pPrice}.00{" "}€
                   </div>
                   <div className="md:ml-6 font-semibold text-gray-600 text-sm">
                     Quantité : {quantity(product._id)}

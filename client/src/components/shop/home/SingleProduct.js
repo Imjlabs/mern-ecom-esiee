@@ -11,7 +11,7 @@ const SingleProduct = (props) => {
   const { data, dispatch } = useContext(HomeContext);
   const { products } = data;
   const history = useHistory();
-
+  console.log(data.products);
   const [wList, setWlist] = useState(
     JSON.parse(localStorage.getItem('wishList'))
   );
@@ -61,6 +61,7 @@ const SingleProduct = (props) => {
     <Fragment>
       {products && products.length > 0 ? (
         products.map((item, index) => (
+          item.pStatus === "Active" && (
           <div
             key={index}
             className="relative col-span-1 m-2 w-70 h-50 flex flex-col border rounded-lg overflow-hidden"
@@ -137,6 +138,8 @@ const SingleProduct = (props) => {
               </svg>
             </div>
           </div>
+                      
+          )
         ))
       ) : (
         <div className="col-span-2 md:col-span-3 lg:col-span-4 flex items-center justify-center py-24 text-2xl">
