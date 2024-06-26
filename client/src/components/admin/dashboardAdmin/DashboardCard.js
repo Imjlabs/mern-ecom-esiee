@@ -2,7 +2,7 @@ import React, { Fragment, useContext, useEffect } from "react";
 import { DashboardContext } from "./";
 import { GetAllData } from "./Action";
 
-const DashboardCard = (props) => {
+const DashboardCard = () => {
   const { data, dispatch } = useContext(DashboardContext);
 
   useEffect(() => {
