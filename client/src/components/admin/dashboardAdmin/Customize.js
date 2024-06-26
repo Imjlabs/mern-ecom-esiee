@@ -12,7 +12,7 @@ const Customize = () => {
       <div className="m-4 md:w-1/2">
         {!data.uploadSliderBtn ? (
           <div
-            onClick={(e) =>
+            onClick={() =>
               dispatch({
                 type: "uploadSliderBtn",
                 payload: !data.uploadSliderBtn,
@@ -88,7 +88,7 @@ const UploadImageSection = () => {
           />
         </div>
         <span
-          onClick={(e) =>
+          onClick={() =>
             dispatch({
               type: "uploadSliderBtn",
               payload: !data.uploadSliderBtn,
@@ -163,7 +163,7 @@ const AllImages = () => {
                   alt="sliderImages"
                 />
                 <span
-                  onClick={(e) => deleteImageReq(item._id)}
+                  onClick={() => deleteImageReq(item._id)}
                   style={{ background: "#303031" }}
                   className="absolute top-0 right-0 m-1 text-white cursor-pointer rounded-full p-1"
                 >
