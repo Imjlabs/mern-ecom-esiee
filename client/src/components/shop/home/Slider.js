@@ -17,10 +17,6 @@ const Slider = () => {
 
     const totalSlides = data?.sliderImages?.length || 0;
 
-    const goToSlide = (slideIndex) => {
-        setCurrentSlide(slideIndex);
-    };
-
     const goToNextSlide = () => {
         nextSlide(totalSlides, currentSlide, setCurrentSlide);
     };
