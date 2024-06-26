@@ -171,7 +171,7 @@ const SettingComponent = () => {
   );
 };
 
-const SettingUser = (props) => {
+const SettingUser = () => {
   return (
     <Fragment>
       <Layout children={<SettingComponent />} />

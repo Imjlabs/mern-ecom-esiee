@@ -4,7 +4,7 @@ import { editProduct, getAllProduct } from "./FetchApi";
 import { getAllCategory } from "../categories/FetchApi";
 const apiURL = process.env.REACT_APP_API_URL;
 
-const EditProductModal = (props) => {
+const EditProductModal = () => {
   const { data, dispatch } = useContext(ProductContext);
 
   const [categories, setCategories] = useState(null);

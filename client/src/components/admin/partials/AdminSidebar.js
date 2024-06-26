@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 
-const AdminSidebar = (props) => {
+const AdminSidebar = () => {
   const location = useLocation();
   const history = useHistory();
 

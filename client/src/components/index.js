@@ -15,7 +15,7 @@ import { UserProfile, UserOrders, SettingUser } from "./shop/dashboardUser";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-const Routes = (props) => {
+const Routes = () => {
   return (
     <Router>
       <Switch>

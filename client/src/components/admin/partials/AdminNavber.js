@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { useHistory } from "react-router-dom";
 
-const AdminNavber = (props) => {
+const AdminNavber = () => {
   const history = useHistory();
 
   const logout = () => {

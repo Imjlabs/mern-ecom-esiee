@@ -7,7 +7,7 @@ import { isWishReq, unWishReq, isWish } from './Mixins';
 
 const apiURL = process.env.REACT_APP_API_URL;
 
-const SingleProduct = (props) => {
+const SingleProduct = () => {
   const { data, dispatch } = useContext(HomeContext);
   const { products } = data;
   const history = useHistory();

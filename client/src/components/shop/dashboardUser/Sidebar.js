@@ -3,7 +3,7 @@ import { useLocation, useHistory } from "react-router-dom";
 import { logout } from "./Action";
 import { DashboardUserContext } from "./Layout";
 
-const Sidebar = (props) => {
+const Sidebar = () => {
   const { data } = useContext(DashboardUserContext);
 
   const history = useHistory();

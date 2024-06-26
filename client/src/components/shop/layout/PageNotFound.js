@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "./index";
 
-const PageNotFoundComponent = (props) => {
+const PageNotFoundComponent = () => {
   return (
     <div className="flex flex-col items-center justify-center my-32">
       <span>
@@ -27,7 +27,7 @@ const PageNotFoundComponent = (props) => {
   );
 };
 
-const PageNotFound = (props) => {
+const PageNotFound = () => {
   return <Layout children={<PageNotFoundComponent />} />;
 };
 

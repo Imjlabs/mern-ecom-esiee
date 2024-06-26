@@ -5,7 +5,7 @@ import { ProductContext } from "./index";
 
 const apiURL = process.env.REACT_APP_API_URL;
 
-const AllProduct = (props) => {
+const AllProduct = () => {
   const { data, dispatch } = useContext(ProductContext);
   const { products } = data;
 

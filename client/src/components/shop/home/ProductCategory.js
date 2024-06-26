@@ -2,7 +2,7 @@ import React, { Fragment, useContext } from "react";
 import ProductCategoryDropdown from "./ProductCategoryDropdown";
 import { HomeContext } from "./index";
 
-const ProductCategory = (props) => {
+const ProductCategory = () => {
   const { data, dispatch } = useContext(HomeContext);
 
   return (

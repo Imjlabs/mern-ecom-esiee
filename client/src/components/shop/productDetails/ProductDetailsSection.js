@@ -14,7 +14,7 @@ import { totalCost } from '../partials/Mixins';
 
 const apiURL = process.env.REACT_APP_API_URL;
 
-const ProductDetailsSection = (props) => {
+const ProductDetailsSection = () => {
   let { id } = useParams();
 
   const { data, dispatch } = useContext(ProductDetailsContext);

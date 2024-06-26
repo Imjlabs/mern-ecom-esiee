@@ -114,7 +114,7 @@ const ProfileComponent = () => {
   );
 };
 
-const UserProfile = (props) => {
+const UserProfile = () => {
   return (
     <Fragment>
       <Layout children={<ProfileComponent />} />

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import ProductDetailsSection from "./ProductDetailsSection";
 
-const Details = (props) => {
+const Details = () => {
   return (
     <Fragment>
       <ProductDetailsSection />

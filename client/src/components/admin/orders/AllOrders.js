@@ -6,7 +6,7 @@ import { fetchData, editOrderReq, deleteOrderReq } from "./Actions";
 
 const apiURL = process.env.REACT_APP_API_URL;
 
-const AllCategory = (props) => {
+const AllCategory = () => {
   const { data, dispatch } = useContext(OrderContext);
   const { orders, loading } = data;
 

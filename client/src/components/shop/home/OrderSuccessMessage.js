@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from "react";
 import { LayoutContext } from "../layout";
 
-const OrderSuccessMessage = (props) => {
+const OrderSuccessMessage = () => {
   const { data, dispatch } = useContext(LayoutContext);
   return (
     <Fragment>

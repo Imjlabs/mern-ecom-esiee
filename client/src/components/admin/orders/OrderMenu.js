@@ -4,7 +4,7 @@ import UpdateOrderModal from "./UpdateOrderModal";
 import SearchFilter from "./SearchFilter";
 import { filterOrder } from "./Actions";
 
-const OrderMenu = (props) => {
+const OrderMenu = () => {
   const { data, dispatch } = useContext(OrderContext);
   const [dropdown, setDropdown] = useState(false);
   return (

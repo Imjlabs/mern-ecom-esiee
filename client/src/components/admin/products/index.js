@@ -15,7 +15,7 @@ const ProductComponent = () => {
   );
 };
 
-const Products = (props) => {
+const Products = () => {
   const [data, dispatch] = useReducer(productReducer, productState);
 
   return (

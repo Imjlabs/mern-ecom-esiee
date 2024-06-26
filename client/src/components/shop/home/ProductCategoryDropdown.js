@@ -208,7 +208,7 @@ const Search = () => {
   );
 };
 
-const ProductCategoryDropdown = (props) => {
+const ProductCategoryDropdown = () => {
   return (
     <Fragment>
       <CategoryList />

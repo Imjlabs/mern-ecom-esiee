@@ -8,7 +8,7 @@ import { deleteReview } from "./Action";
 import { isAuthenticate } from "../auth/fetchApi";
 import { getSingleProduct } from "./FetchApi";
 
-const AllReviews = (props) => {
+const AllReviews = () => {
   const { data, dispatch } = useContext(LayoutContext);
   const { pRatingsReviews } = data.singleProductDetail;
   let { id } = useParams();

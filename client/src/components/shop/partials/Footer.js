@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import moment from "moment";
 
-const Footer = (props) => {
+const Footer = () => {
   return (
     <Fragment>
       <footer
