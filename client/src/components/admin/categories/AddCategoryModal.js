@@ -85,7 +85,7 @@ const AddCategoryModal = (props) => {
   return (
     <Fragment>
       <div
-        onClick={(e) => dispatch({ type: "addCategoryModal", payload: false })}
+        onClick={() => dispatch({ type: "addCategoryModal", payload: false })}
         className={`${
           data.addCategoryModal ? "" : "hidden"
         } fixed top-0 left-0 z-30 w-full h-full bg-black opacity-50`}
@@ -103,7 +103,7 @@ const AddCategoryModal = (props) => {
             </span>
             <span
               style={{ background: "#303031" }}
-              onClick={(e) =>
+              onClick={() =>
                 dispatch({ type: "addCategoryModal", payload: false })
               }
               className="cursor-pointer text-gray-100 py-2 px-2 rounded-full"
