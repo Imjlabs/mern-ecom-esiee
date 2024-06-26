@@ -17,7 +17,7 @@ const DashboardComponent = () => {
   );
 };
 
-const DashboardAdmin = (props) => {
+const DashboardAdmin = () => {
   const [data, dispatch] = useReducer(dashboardReducer, dashboardState);
   return (
     <Fragment>

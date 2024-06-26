@@ -142,7 +142,7 @@ const TodayOrderTable = ({ order }) => {
   );
 };
 
-const TodaySell = (props) => {
+const TodaySell = () => {
   return (
     <div className="m-4">
       <SellTable />
