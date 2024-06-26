@@ -167,7 +167,7 @@ const CartModal = () => {
                       cartModalOpen();
                     }}
                   >
-                    Payez {data.PaimecartTotalCost}.00 €
+                    Payez {data.PaimecartTotalCost}
                   </div>
                 ) : (
                   <div
