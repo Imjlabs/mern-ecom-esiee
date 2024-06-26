@@ -12,7 +12,7 @@ const CategoryMenu = () => {
         <div className="flex flex-col space-y-4 md:flex-row md:justify-between md:items-center w-full">
           <div
             style={{ background: "#303031" }}
-            onClick={(e) =>
+            onClick={() =>
               dispatch({ type: "addCategoryModal", payload: true })
             }
             className="cursor-pointer rounded-full p-2 flex items-center justify-center text-gray-100 text-sm font-semibold uppercase"
