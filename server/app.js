@@ -1,5 +1,3 @@
-
-
 const express = require("express");
 const app = express();
 require("dotenv").config();
@@ -7,6 +5,7 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const csurf = require("csurf");
 
 // Import Router
 const authRouter = require("./routes/auth");
@@ -16,7 +15,6 @@ const brainTreeRouter = require("./routes/braintree");
 const orderRouter = require("./routes/orders");
 const usersRouter = require("./routes/users");
 const customizeRouter = require("./routes/customize");
-const { loginCheck } = require("./middleware/auth");
 const CreateAllFolder = require("./config/uploadFolderCreateScript");
 
 CreateAllFolder();
@@ -40,6 +38,20 @@ app.use(cors());
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+// Set up csurf middleware
+app.use(csurf({ cookie: true }));
+
+// Error handling for CSRF token errors
+app.use((err, req, res, next) => {
+  if (err.code === 'EBADCSRFTOKEN') {
+    // handle CSRF token errors here
+    res.status(403);
+    res.send('Form tampered with.');
+  } else {
+    next(err);
+  }
+});
 
 // Routes
 app.use("/api", authRouter);
