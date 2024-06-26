@@ -17,10 +17,10 @@ const LoginSignup = (props) => {
   const changeLoginSignup = () => {
     if (login) {
       setLogin(false);
-      setLoginValue("Login");
+      setLoginValue("Connexion");
     } else {
       setLogin(true);
-      setLoginValue("Create an account");
+      setLoginValue("Créer un compte");
     }
   };
 

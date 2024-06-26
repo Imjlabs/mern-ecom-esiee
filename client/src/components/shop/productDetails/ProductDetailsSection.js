@@ -19,14 +19,14 @@ const ProductDetailsSection = (props) => {
 
   const { data, dispatch } = useContext(ProductDetailsContext);
   const { data: layoutData, dispatch: layoutDispatch } =
-    useContext(LayoutContext); // Layout Context
+    useContext(LayoutContext);
 
   const sProduct = layoutData.singleProductDetail;
   const [pImages, setPimages] = useState(null);
-  const [count, setCount] = useState(0); // Slide change state
+  const [count, setCount] = useState(0);
 
-  const [quantitiy, setQuantitiy] = useState(1); // Increse and decrese quantity state
-  const [, setAlertq] = useState(false); // Alert when quantity greater than stock
+  const [quantitiy, setQuantitiy] = useState(1);
+  const [, setAlertq] = useState(false);
 
   const [wList, setWlist] = useState(
     JSON.parse(localStorage.getItem('wishList'))
@@ -49,7 +49,7 @@ const ProductDetailsSection = (props) => {
           }); // Dispatch in layout context
           setPimages(responseData.Product.pImages);
           dispatch({ type: 'loading', payload: false });
-          layoutDispatch({ type: 'inCart', payload: cartList() }); // This function change cart in cart state
+          layoutDispatch({ type: 'inCart', payload: cartList() });
         }
         if (responseData.error) {
           console.log(responseData.error);
@@ -58,14 +58,14 @@ const ProductDetailsSection = (props) => {
     } catch (error) {
       console.log(error);
     }
-    fetchCartProduct(); // Updating cart total
+    fetchCartProduct(); 
   };
 
   const fetchCartProduct = async () => {
     try {
       let responseData = await cartListProduct();
       if (responseData && responseData.Products) {
-        layoutDispatch({ type: 'cartProduct', payload: responseData.Products }); // Layout context Cartproduct fetch and dispatch
+        layoutDispatch({ type: 'cartProduct', payload: responseData.Products }); 
       }
     } catch (error) {
       console.log(error);
