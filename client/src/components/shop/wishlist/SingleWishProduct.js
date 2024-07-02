@@ -107,7 +107,7 @@ const Product = () => {
   );
 };
 
-const SingleWishProduct = (props) => {
+const SingleWishProduct = () => {
   return (
     <Fragment>
       <section className="mx-4 mt-20 md:mx-12 md:mt-32 lg:mt-24">

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-const SearchFilter = (props) => {
+const SearchFilter = () => {
   return (
     <Fragment>
       <div className="w-full my-4 md:my-0 flex items-start justify-end">

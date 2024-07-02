@@ -2,7 +2,7 @@ import React, { Fragment, useContext, useState, useEffect } from "react";
 import { OrderContext } from "./index";
 import { getAllOrder, editCategory } from "./FetchApi";
 
-const UpdateOrderModal = (props) => {
+const UpdateOrderModal = () => {
   const { data, dispatch } = useContext(OrderContext);
 
   const [status, setStatus] = useState("");

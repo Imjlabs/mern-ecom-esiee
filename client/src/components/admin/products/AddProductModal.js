@@ -315,7 +315,7 @@ const AddProductDetail = ({ categories }) => {
   );
 };
 
-const AddProductModal = (props) => {
+const AddProductModal = () => {
   useEffect(() => {
     fetchCategoryData();
   }, []);

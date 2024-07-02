@@ -6,7 +6,7 @@ import { logout } from "./Action";
 import { LayoutContext } from "../index";
 import { isAdmin } from "../auth/fetchApi";
 
-const Navber = (props) => {
+const Navber = () => {
   const history = useHistory();
   const location = useLocation();
 

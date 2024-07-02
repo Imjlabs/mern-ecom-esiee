@@ -156,7 +156,7 @@ const OrdersComponent = () => {
   );
 };
 
-const UserOrders = (props) => {
+const UserOrders = () => {
   return (
     <Fragment>
       <Layout children={<OrdersComponent />} />

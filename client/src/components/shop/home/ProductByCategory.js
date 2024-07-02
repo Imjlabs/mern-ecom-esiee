@@ -145,7 +145,7 @@ const PageComponent = () => {
   );
 };
 
-const ProductByCategory = (props) => {
+const ProductByCategory = () => {
   return (
     <Fragment>
       <Layout children={<PageComponent />} />

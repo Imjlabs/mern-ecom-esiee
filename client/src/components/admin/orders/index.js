@@ -15,7 +15,7 @@ const OrderComponent = () => {
   );
 };
 
-const Orders = (props) => {
+const Orders = () => {
   const [data, dispatch] = useReducer(orderReducer, orderState);
   return (
     <Fragment>

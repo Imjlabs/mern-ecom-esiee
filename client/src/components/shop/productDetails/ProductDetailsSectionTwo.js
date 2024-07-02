@@ -55,7 +55,7 @@ const RatingReview = () => {
   );
 };
 
-const ProductDetailsSectionTwo = (props) => {
+const ProductDetailsSectionTwo = () => {
   const { data } = useContext(ProductDetailsContext);
   const { data: layoutData } = useContext(LayoutContext);
   const [singleProduct, setSingleproduct] = useState({});

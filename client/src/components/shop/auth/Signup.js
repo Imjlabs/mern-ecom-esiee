@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { signupReq } from "./fetchApi";
 
-const Signup = (props) => {
+const Signup = () => {
   const [data, setData] = useState({
     name: "",
     email: "",

@@ -11,7 +11,7 @@ import DropIn from "braintree-web-drop-in-react";
 
 const apiURL = process.env.REACT_APP_API_URL;
 
-export const CheckoutComponent = (props) => {
+export const CheckoutComponent = () => {
   const history = useHistory();
   const { data, dispatch } = useContext(LayoutContext);
 

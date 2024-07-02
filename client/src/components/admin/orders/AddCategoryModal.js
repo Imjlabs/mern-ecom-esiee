@@ -2,7 +2,7 @@ import React, { Fragment, useContext, useState } from "react";
 import { CategoryContext } from "./index";
 import { createCategory, getAllCategory } from "./FetchApi";
 
-const AddCategoryModal = (props) => {
+const AddCategoryModal = () => {
   const { data, dispatch } = useContext(CategoryContext);
 
   const alert = (msg, type) => (

@@ -2,7 +2,7 @@ import React, { Fragment, useState, useContext } from "react";
 import { loginReq } from "./fetchApi";
 import { LayoutContext } from "../index";
 
-const Login = (props) => {
+const Login = () => {
   const { data: layoutData, dispatch: layoutDispatch } = useContext(
     LayoutContext
   );

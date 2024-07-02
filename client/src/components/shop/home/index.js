@@ -21,7 +21,7 @@ const HomeComponent = () => {
   );
 };
 
-const Home = (props) => {
+const Home = () => {
   const [data, dispatch] = useReducer(homeReducer, homeState);
   return (
     <Fragment>

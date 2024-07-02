@@ -5,7 +5,7 @@ import { LayoutContext } from "../layout";
 import { isAuthenticate } from "../auth/fetchApi";
 import { getSingleProduct } from "./FetchApi";
 
-const ReviewForm = (props) => {
+const ReviewForm = () => {
   const { data, dispatch } = useContext(LayoutContext);
   let { id } = useParams();
 
